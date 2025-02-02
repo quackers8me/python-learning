@@ -13,8 +13,10 @@ COLORS = ['\x1b[%dm' % c for c in (30, 31, 34, 32, 39)]
 def unicard(card, color=False):
     if card[:2] == '10':
         card = 'T' + card[2]
+    # B for playing card back
     if card[:1].upper() == 'B':
         face, suit = 'BS'
+    # F for fool aka joker
     if card[:1].upper() == 'F':
         face, suit = 'FC'
     else:
